@@ -3,6 +3,7 @@ const geo=require("geolocation");
 const publisherSchema=new mongoose.Schema({
     "name":String,
     "location":{
+        //type:"Point",
         "coordinates":[Number]
     }
 });
