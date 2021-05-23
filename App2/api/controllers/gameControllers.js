@@ -1,4 +1,4 @@
-const { request } = require("express");
+//const { request } = require("express");
 const mongoose = require("mongoose");
 const gamesdb = mongoose.model("meanGamesGeo");
 const showOne = function (req, res) {

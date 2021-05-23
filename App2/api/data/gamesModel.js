@@ -1,12 +1,9 @@
 const mongoose=require("mongoose");
 const geo=require("geolocation");
-/*const publisherSchema=new mongoose.Schema({
+const publisherSchema=new mongoose.Schema({
     "name":String,
-    "location":{
-        //type:"Point",
-        "coordinates":[Number]
-    }
-});*/
+    "country":String
+    });
 const gameSchema=new mongoose.Schema({
     title:{
         type:String,
@@ -20,7 +17,7 @@ const gameSchema=new mongoose.Schema({
         min:1,
         max:10,
     },
-    //"publisher":publisherSchema,
+    publisher:publisherSchema,
     rate:{
         type:Number,
         min:1,
