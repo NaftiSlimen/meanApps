@@ -9,5 +9,5 @@ router.route("/api/games/:gameID")
     .get(gameController.showOne)
     .delete(gameController.deleteByID)
     .put(gameController.fullyUpdateGame)
-    .put(gameController.partiallyUpdateGame);
+    .patch(gameController.partiallyUpdateGame);
 module.exports=router;

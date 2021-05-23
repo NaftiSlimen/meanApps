@@ -33,7 +33,7 @@ const addGame = function (req, res) {
         maxPlayers: parseInt(req.body.maxPlayers),
         price: parseFloat(req.body.price),
         designer: req.body.designer,
-        publisher: req.body.publisher,
+        //publisher: req.body.publisher,
         rate: parseInt(req.body.rate)
     }
         , function (err, game) {
@@ -70,7 +70,7 @@ const fullyUpdateGame = function (req, res) {
                 game.maxPlayers = parseInt(req.body.maxPlayers);
                 game.price = parseFloat(req.body.price);
                 game.designer = req.body.designer;
-                game.publisher = req.body.publisher;
+               // game.publisher = req.body.publisher;
                 game.rate = parseInt(req.body.rate);
                 game.save(function(err,updatedGame){
                     if (err) {
@@ -106,7 +106,7 @@ const partiallyUpdateGame = function (req, res) {
                 if (req.body.maxPlayers) game.maxPlayers = parseInt(req.body.maxPlayers);
                 if (req.body.price) game.price = parseFloat(req.body.price);
                 if (req.body.designer) game.designer = req.body.designer;
-                if (req.body.publisher) game.publisher = req.body.publisher;
+                //if (req.body.publisher) game.publisher = req.body.publisher;
                 if (req.body.rate) game.rate = parseInt(req.body.rate);
                 game.save(function(err,updatedGame){
                     if (err) {
