@@ -46,17 +46,22 @@ const addGame=function(req,res){
 
 const deleteByID = function(req,res){
     const gameID=req.params.gameID;
-    console.log(gameID);
+    console.log("1");
     gamesdb.findByIdAndDelete(gameID).exec(function(err,deletedGame){
-        const response= {status: 204};
+        console.log("2");
+        const response= {status: 204,
+        message:"game deleted"};
         if (err) {
+            console.log("3");
             console.log("Error finding game");
             response.status=  500;
             response.message=  err;} 
-        else if(!deletedGame) {response.status=  404;
+        else if(!deletedGame) {
+            console.log("4");
+            response.status=  404;
             response.message=  {"message" : "Game ID not found"};
-        }else{
-        res.status(response.status).json(response.message);}}
+        }
+        res.status(response.status).json(response.message);}
     );
 }
 module.exports={
