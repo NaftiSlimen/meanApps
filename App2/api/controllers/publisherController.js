@@ -124,8 +124,7 @@ const partiallyUpdatePublisher = function (req, res) {
             console.log("adding");
             if (req.body.name || req.body.country) {
 
-                //game.publisher = {};
-                //console.log("before"+game.publisher);
+              
                 if (req.body.name) game.publisher.name = req.body.name;
                 if (req.body.country) game.publisher.country = req.body.country;
 
