@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const gameController = require("../controllers/gameControllers.js");
 const publisherController = require("../controllers/publisherController.js");
+const reviewController = require("../controllers/reviewController.js");
 router.route("/api/games")
     .get(gameController.showAll)
     .post(gameController.addGame)
@@ -18,8 +19,13 @@ router.route("/api/games/:gameID/publisher")
     .patch(publisherController.partiallyUpdatePublisher)
     .delete(publisherController.deletePublisher);
 router.route("/api/games/:gameID/reviews")
-    .post(publisherController.addreview)
-    .get(publisherController.showreviews)
-    //.put(publisherController.fullyUpdatePublisher)
-    //.patch(publisherController.partiallyUpdatePublisher);
+    .post(reviewController.addreview)
+    .get(reviewController.showreviews);
+    //.put(reviewController.fullyUpdatePublisher)
+    //.patch(reviewController.partiallyUpdatePublisher);
+    router.route("/api/games/:gameID/reviews/:reviewID")
+    .delete(reviewController.deleteReview)
+    .get(reviewController.showOneReview)
+    .put(reviewController.fullyUpdatereview)
+    .patch(reviewController.partiallyUpdatereview);
 module.exports = router;
