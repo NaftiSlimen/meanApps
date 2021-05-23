@@ -14,6 +14,6 @@ router.route("/api/games/:gameID")
 router.route("/api/games/:gameID/publisher")
     .post(publisherController.addPublisher)
     .get(publisherController.showPublisher)
-    //.put(publisherController.fullyUpdatePublisher)
+    .delete(publisherController.deletePublisher)
     .patch(publisherController.partiallyUpdatePublisher);
 module.exports=router;
