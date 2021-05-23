@@ -2,6 +2,7 @@ require("./api/data/db.js");
 var express=require("express");
 var app=express();
 const path=require("path");
+app.use(express.json());
 
 const routes=require("./api/routers");
 app.set("port",5000);
